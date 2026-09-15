@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>react diff fixture</title>
+  <script>
+    const chrome = {
+      runtime: { getURL: p => '../' + p },
+      storage: {
+        sync: { get: (defaults, cb) => cb(defaults) },
+        onChanged: { addListener: () => {} },
+      },
+    };
+  </script>
+  <script src="../katex/katex.min.js"></script>
+</head>
+<body>
+<!-- Mimics GitHub's React split-view diff:
+     table > tbody > tr.diff-line-row > td.diff-text-cell > code.diff-text > div.diff-text-inner > token spans -->
+<table class="tab-size width-full DiffLines-module__tableLayoutFixed__Ui4OU">
+<tbody>
+<tr class="diff-line-row">
+  <td class="diff-text-cell focusable-grid-cell left-side"></td>
+  <td class="diff-text-cell focusable-grid-cell right-side"><code class="diff-text syntax-highlighted-line addition"><div class="diff-text-inner"><span class="pl-s">    $$k_i \cdot G \cdot k_{i-1} \cdot \ldots \cdot G \cdot k_0 \approx U_t$$</span></div></code></td>
+</tr>
+<tr class="diff-line-row">
+  <td class="diff-text-cell focusable-grid-cell left-side"></td>
+  <td class="diff-text-cell focusable-grid-cell right-side"><code class="diff-text syntax-highlighted-line addition"><div class="diff-text-inner"><span class="pl-s">where </span><span class="pl-s">$G$</span><span class="pl-s"> is the base gate and each </span><span class="pl-s">$k_j = U3 \otimes U3$</span><span class="pl-s"> is a pair of</span></div></code></td>
+</tr>
+<tr class="diff-line-row">
+  <td class="diff-text-cell focusable-grid-cell left-side"></td>
+  <td class="diff-text-cell focusable-grid-cell right-side"><code class="diff-text syntax-highlighted-line addition"><div class="diff-text-inner"><span class="pl-s">single-qubit gates whose rotation angles ($6 (i + 1)$ real parameters in</span></div></code></td>
+</tr>
+<tr class="diff-line-row">
+  <td class="diff-text-cell focusable-grid-cell left-side"></td>
+  <td class="diff-text-cell focusable-grid-cell right-side"><code class="diff-text syntax-highlighted-line addition"><div class="diff-text-inner"><span class="pl-s">        $$U3(\alpha, \beta, \lambda) = \begin{pmatrix}</span></div></code></td>
+</tr>
+<tr class="diff-line-row">
+  <td class="diff-text-cell focusable-grid-cell left-side"></td>
+  <td class="diff-text-cell focusable-grid-cell right-side"><code class="diff-text syntax-highlighted-line addition"><div class="diff-text-inner"><span class="pl-s">            \cos(\alpha/2) &amp; -e^{i\lambda} \sin(\alpha/2) \\</span></div></code></td>
+</tr>
+<tr class="diff-line-row">
+  <td class="diff-text-cell focusable-grid-cell left-side"></td>
+  <td class="diff-text-cell focusable-grid-cell right-side"><code class="diff-text syntax-highlighted-line addition"><div class="diff-text-inner"><span class="pl-s">            e^{i\beta} \sin(\alpha/2) &amp; e^{i(\beta+\lambda)} \cos(\alpha/2)</span></div></code></td>
+</tr>
+<tr class="diff-line-row">
+  <td class="diff-text-cell focusable-grid-cell left-side"></td>
+  <td class="diff-text-cell focusable-grid-cell right-side"><code class="diff-text syntax-highlighted-line addition"><div class="diff-text-inner"><span class="pl-s">        \end{pmatrix}$$</span></div></code></td>
+</tr>
+<tr class="diff-line-row">
+  <td class="diff-text-cell focusable-grid-cell left-side"></td>
+  <td class="diff-text-cell focusable-grid-cell right-side"><code class="diff-text syntax-highlighted-line addition"><div class="diff-text-inner"><span class="pl-s">    which parametrizes all of SU(2) up to a global phase. Cost: $5 total.</span></div></code></td>
+</tr>
+<tr class="diff-line-row">
+  <td class="diff-text-cell focusable-grid-cell left-side"></td>
+  <td class="diff-text-cell focusable-grid-cell right-side"><code class="diff-text syntax-highlighted-line addition"><div class="diff-text-inner"><span class="pl-s">    """</span></div></code></td>
+</tr>
+</tbody>
+</table>
+<script src="../content.js"></script>
+</body>
+</html>

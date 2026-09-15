@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "GitHub LaTeX Renderer",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Renders LaTeX math ($...$, $$...$$) in GitHub PR diffs with KaTeX, including multi-line display math spanning several diff lines.",
   "permissions": ["storage"],
   "host_permissions": ["https://github.com/*"],

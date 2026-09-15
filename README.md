@@ -27,13 +27,19 @@ so GitHub's CSP does not block it and it works offline.
 Toggle on/off via the extension icon in the toolbar; turning it off restores
 the original page without a reload.
 
-## Limitations (v0.1)
+## Limitations (v0.2)
 
-- Only the classic diff markup (`td.blob-code.js-file-line`) is handled —
-  GitHub's newer React diff/code views are not yet covered.
-- A rendered line is flattened to plain text, so syntax highlighting is lost
-  on lines that contain math.
 - Markdown comments are untouched (GitHub already renders math there).
+- Under heavy virtualization in the React diff UI, lines re-mount on scroll and
+  are re-rendered automatically by the MutationObserver.
+
+## Supported markup
+
+- Classic diff: `td.blob-code.js-file-line`
+- React diff UI (2025+): `td.diff-text-cell > code.diff-text`, unified and
+  split view (each side processed as its own line column)
+- Rendering preserves syntax highlighting and +/− markers — only the text
+  nodes containing math are replaced.
 
 ## Files
 
