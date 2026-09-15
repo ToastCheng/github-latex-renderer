@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "GitHub LaTeX Renderer",
+  "version": "0.1.0",
+  "description": "Renders LaTeX math ($...$, $$...$$) found in GitHub PR diffs using KaTeX, including multi-line display math spanning several diff lines.",
+  "permissions": ["storage"],
+  "host_permissions": ["https://github.com/*"],
+  "content_scripts": [
+    {
+      "matches": ["https://github.com/*"],
+      "js": ["katex/katex.min.js", "content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["katex/katex.min.css", "katex/fonts/*"],
+      "matches": ["https://github.com/*"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "GitHub LaTeX Renderer"
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}
